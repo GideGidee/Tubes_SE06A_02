@@ -6,3 +6,5 @@ def pilih_item():
     print("3. Riwayat pemesanan")
     print("4. Hapus pesanan")
     print("5. Keluar")
+
+pilih_item()
