@@ -8,4 +8,5 @@ def pilih_item():
     print("3. Riwayat pemesanan")
     print("4. Lihat pesanan")
     print("5. Keluar")
-    print("Selesai")
+
+
