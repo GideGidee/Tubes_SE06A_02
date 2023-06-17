@@ -41,6 +41,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Ekonomi']}")
         print(f"Jumlah Tiket Tersedia: {info['4']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT002'}")
         print(f"Tanggal Keberangkatan: {info['25 Juni 2023']}")
@@ -49,6 +50,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Bisnis']}")
         print(f"Jumlah Tiket Tersedia: {info['5']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT003'}")
         print(f"Tanggal Keberangkatan: {info['26 Juni 2023']}")
@@ -57,6 +59,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Eksekutif']}")
         print(f"Jumlah Tiket Tersedia: {info['3']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT004'}")
         print(f"Tanggal Keberangkatan: {info['26 Juni 2023']}")
@@ -65,6 +68,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Bisnis']}")
         print(f"Jumlah Tiket Tersedia: {info['6']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT005'}")
         print(f"Tanggal Keberangkatan: {info['27 Juni 2023']}")
@@ -73,6 +77,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Eksekutif']}")
         print(f"Jumlah Tiket Tersedia: {info['2']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT006'}")
         print(f"Tanggal Keberangkatan: {info['27 Juni 2023']}")
@@ -81,6 +86,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Ekonomi']}")
         print(f"Jumlah Tiket Tersedia: {info['1']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT007'}")
         print(f"Tanggal Keberangkatan: {info['28 Juni 2023']}")
@@ -89,6 +95,7 @@ def tampil_tiket(tiket):
         print(f"Jenis Kelas: {info['Eksekutif']}")
         print(f"Jumlah Tiket Tersedia: {info['3']}")
         print("======================================")
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT008'}")
         print(f"Tanggal Keberangkatan: {info['28 Juni 2023']}")
