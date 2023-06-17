@@ -27,6 +27,24 @@ def pilih_tiket(tiket):
         print("Nomor tiket tidak valid. Silakan coba lagi.")
         return pilih_tiket(tiket)
 
+def pesan_tiket(tiket):
+    nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
+    if nomor_tiket in tiket:
+        jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
+        if jumlah_tiket <= tiket[nomor_tiket]['jumlah']:
+            tiket[nomor_tiket]['jumlah'] -= jumlah_tiket
+            data_pemesanan = {
+                'nomor_tiket': nomor_tiket,
+                'jumlah_tiket': jumlah_tiket
+            }
+            return data_pemesanan
+        else:
+            print("Maaf, jumlah tiket yang diminta tidak tersedia.")
+    else:
+        print("Nomor tiket tidak valid. Silakan coba lagi.")
+
+    return None
+
 # Contoh data tiket
 tiket = {
     "TKT001": {
@@ -49,7 +67,4 @@ tiket = {
     }
 }
 
-# Contoh penggunaan
-tampil_tiket(tiket)
-nomor_tiket_terpilih = pilih_tiket(tiket)
-print("Anda telah memilih tiket dengan nomor:", nomor_tiket_terpilih)
+pesanan = []
