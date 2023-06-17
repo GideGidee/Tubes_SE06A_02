@@ -211,5 +211,3 @@ def keluar():
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
 
-
-#test
