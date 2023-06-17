@@ -25,7 +25,7 @@ def pilih_item():
             break
         else:
             print("\nPilihan anda Tidak Valid!")
-            return pilih_item
+            return pilih_item()
 
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
