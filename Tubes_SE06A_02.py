@@ -9,6 +9,38 @@ def pilih_item():
     print("4. Lihat pesanan")
     print("5. Keluar")
 
+    pilih = (input("\nMasukkan Pilihan Anda : "))
+                   
+
+            if pilih == "1":
+                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
+                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
+                hasil1 = jumlah(bil1, bil2)
+                print("\nHasil Penjumlahan : ", hasil1)
+            elif pilih == "2":
+                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
+                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
+                hasil2 = kali(bil1, bil2)
+                print("\nHasil Perkalian : ", hasil2)
+            elif pilih == "3":
+                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
+                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
+                hasil3 = bagi(bil1, bil2)
+                print("\nHasil Pembagian : ", hasil3)
+            elif pilih == "4":
+                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
+                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
+                hasil4 = kurang(bil1, bil2)
+                print("\nHasil Pengurangan : ", hasil4)
+            elif pilih == "5":
+                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
+                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
+                hasil5 = pangkat(bil1, bil2)
+                print("\nHasil Pangkat : ", hasil5)
+            else:
+                print("\nBilangan Anda Tidak Valid!")
+                continue
+
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
