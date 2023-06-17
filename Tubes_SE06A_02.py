@@ -12,7 +12,7 @@ def pilih_item():
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            tampil_tiket
+            tampil_tiket(tiket)
             break
         elif pilih == "2":
             print("\nHasil Perkalian : ", hasil2)
