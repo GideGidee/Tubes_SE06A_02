@@ -34,7 +34,7 @@ def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
         print("======================================")
-        print(f"Nomor Tiket: {'TKT001'}")
+        print(f"Nomor Tiket: {'PWT-BKS001'}")
         print(f"Tanggal Keberangkatan: {info['25 Juni 2023']}")
         print(f"Jam Keberangkatan: {info['19.00 WIB']}")
         print(f"Harga Tiket: {info['60000']}")
