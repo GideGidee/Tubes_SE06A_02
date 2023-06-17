@@ -12,33 +12,18 @@ def pilih_item():
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
-            bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
-            hasil1 = jumlah(bil1, bil2)
-            print("\nHasil Penjumlahan : ", hasil1)
+            tampil = tampil_tiket
         elif pilih == "2":
-            bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
-            bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
-            hasil2 = kali(bil1, bil2)
             print("\nHasil Perkalian : ", hasil2)
         elif pilih == "3":
-            bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
-                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
-                hasil3 = bagi(bil1, bil2)
-                print("\nHasil Pembagian : ", hasil3)
-            elif pilih == "4":
-                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
-                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
-                hasil4 = kurang(bil1, bil2)
-                print("\nHasil Pengurangan : ", hasil4)
-            elif pilih == "5":
-                bil1 = (float(input("\nMasukkan Bilangan ke - 1 : ")))
-                bil2 = (float(input("Masukkan Bilangan ke - 2 : ")))
-                hasil5 = pangkat(bil1, bil2)
-                print("\nHasil Pangkat : ", hasil5)
-            else:
-                print("\nBilangan Anda Tidak Valid!")
-                continue
+            print("\nHasil Pembagian : ", hasil3)
+        elif pilih == "4":
+            print("\nHasil Pengurangan : ", hasil4)
+        elif pilih == "5":
+            print("\nHasil Pangkat : ", hasil5)
+        else:
+            print("\nPilihan anda Tidak Valid!")
+            continue
 
 
 def tampil_tiket(tiket):
