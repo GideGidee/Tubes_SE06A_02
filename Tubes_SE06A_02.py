@@ -6,7 +6,7 @@ def pilih_login():
     print("Pilih opsi berikut!")
     print("1. Admin")
     print("2. User")
-    
+
     pilihan = (input("\nMasukkan Pilihan Anda : "))
 
     if pilihan == "1":
@@ -35,18 +35,15 @@ def login_admin():
         else:
             print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
             login += 1
-    
-
 
 def pilih_item():
-    print("===========SELAMAT DATANG DI CAHAYA TRANS==============")
+    print("===========SELAMAT DATANG DI ==============")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
-    print("3. Riwayat pemesanan")
-    print("4. Lihat pesanan")
-    print("5. Pembayaran")
-    print("6. Keluar")
+    print("3. Lihat pesanan")
+    print("4. Pembayaran")
+    print("5. Keluar")
 
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
@@ -62,11 +59,54 @@ def pilih_item():
         elif pilih == "5":
             keluar()
             break
-        elif pilih == "6":
-            print()
         else:
             print("\nPilihan anda Tidak Valid!")
             return pilih_item()
+
+def pilihan_admin():
+    print("===========SELAMAT DATANG DI ==============")
+    print("Pilih opsi berikut!")
+    print("1. Lihat tiket")
+    print("2. Lihat pesanan")
+    print("3. Tambah tiket")
+    print("4. Keluar")
+    pilih = (input("\nMasukkan Pilihan Anda : "))
+    while True:
+        if pilih == "1":
+            tampil_tiket(tiket)
+            break
+        elif pilih == "2":
+            print("\nHasil Perkalian : ")
+        elif pilih == "3":
+            print("\nHasil Pembagian : ")
+        elif pilih == "4":
+            keluar()
+            break
+        else:
+            print("\nPilihan anda Tidak Valid!")
+            return pilihan_admin()
+
+# Contoh data tiket
+tiket = {
+    "TKT001": {
+        "artis": "Artis A",
+        "tanggal": "10 Juni 2023",
+        "harga": 500000,
+        "jumlah": 10
+    },
+    "TKT002": {
+        "artis": "Artis B",
+        "tanggal": "15 Juli 2023",
+        "harga": 750000,
+        "jumlah": 5
+    },
+    "TKT003": {
+        "artis": "Artis C",
+        "tanggal": "20 Agustus 2023",
+        "harga": 1000000,
+        "jumlah": 2
+    }
+}
 
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
@@ -168,28 +208,6 @@ def pesan_tiket(tiket):
         print("Nomor tiket tidak valid. Silakan coba lagi.")
 
     return None
-
-# Contoh data tiket
-tiket = {
-    "TKT001": {
-        "artis": "Artis A",
-        "tanggal": "10 Juni 2023",
-        "harga": 500000,
-        "jumlah": 10
-    },
-    "TKT002": {
-        "artis": "Artis B",
-        "tanggal": "15 Juli 2023",
-        "harga": 750000,
-        "jumlah": 5
-    },
-    "TKT003": {
-        "artis": "Artis C",
-        "tanggal": "20 Agustus 2023",
-        "harga": 1000000,
-        "jumlah": 2
-    }
-}
 
 def riwayat_pemesanan(pesanan):
     if len(pesanan) > 0:
