@@ -157,3 +157,6 @@ def keluar():
             print("Pilihan Anda Tidak Valid!")
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
+
+
+#test
