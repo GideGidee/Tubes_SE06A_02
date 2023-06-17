@@ -1,6 +1,10 @@
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 # tes
+<<<<<<< HEAD
 # tess
+=======
+#tes
+>>>>>>> 9ed8d20c21216820c9193ab7fc8aab238c42161b
 def pilih_item():
     print("===========SELAMAT DATANG==============")
     print("Pilih opsi berikut!")
