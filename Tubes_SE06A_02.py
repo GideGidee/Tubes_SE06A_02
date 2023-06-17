@@ -146,6 +146,17 @@ tiket = {
     }
 }
 
+def riwayat_pemesanan(pesanan):
+    if len(pesanan) > 0:
+        print("Data Pemesanan: ")
+        for index, pemesanan in enumerate(pesanan, start=1):
+             print(f"Nomor Pemesanan: {index}")
+             print(f"Nomor Tiket: {pemesanan['nomor_tiket']}")
+             print(f"Jumlah Tiket: {pemesanan['jumlah_tiket']}")
+             print("=======================================")
+    else:
+        print("Belum ada data pemesanan.")
+
 pesanan = []
 
 def keluar():
