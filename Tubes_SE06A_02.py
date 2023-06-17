@@ -25,7 +25,6 @@ def pilih_item():
             print("\nPilihan anda Tidak Valid!")
             continue
 
-
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
