@@ -7,7 +7,8 @@ def pilih_item():
     print("2. Pesan tiket")
     print("3. Riwayat pemesanan")
     print("4. Lihat pesanan")
-    print("5. Keluar")
+    print("5. Pembayaran")
+    print("6. Keluar")
 
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
@@ -23,6 +24,8 @@ def pilih_item():
         elif pilih == "5":
             keluar()
             break
+        elif pilih == "6":
+            print()
         else:
             print("\nPilihan anda Tidak Valid!")
             return pilih_item()
