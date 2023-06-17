@@ -1,3 +1,4 @@
+import time 
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
 def pilih_login():
@@ -19,18 +20,20 @@ def pilih_login():
 def login_admin():
     login = 0
     while True:
-        username = input("Masukkan Username ")
-        password = input("Masukkan Password ")
+        username = input("Masukkan Username: ")
+        password = input("Masukkan Password: ")
 
         if username == "admin" and password == "kelompok2nihbos":
             print("Sugeng Rawuh", username, "!")
             # masuk ke pilihan
             break
         if login == 3:
-            print("Jajalen Sandi karo Password mungkin enek seng salah!")
+            print("Username dan Password yang anda input ada yang salah, coba lagi!")
+            time.sleep(5)
+            pilih_login()
             break
         else:
-            print("Login raiso, Dang dijajal maneh")
+            print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
             login += 1
     
 
@@ -211,3 +214,4 @@ def keluar():
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
 
+pilih_login()
