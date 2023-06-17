@@ -85,3 +85,15 @@ tiket = {
 }
 
 pesanan = []
+
+def keluar():
+    while True:
+        terus = input("\nApakah Anda ingin melanjutkan? (iya/tidak) = ")
+        if terus == "iya" or terus == "tidak":
+            break
+        else:
+            print("Pilihan Anda Tidak Valid!")
+        
+        if terus == "tidak":
+            print("Sampai jumpa dan Terima kasih!")
+            break
