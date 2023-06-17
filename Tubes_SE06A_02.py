@@ -93,7 +93,5 @@ def keluar():
             break
         else:
             print("Pilihan Anda Tidak Valid!")
-        
-        if terus == "tidak":
-            print("Sampai jumpa dan Terima kasih!")
-            break
+    if terus == "tidak":
+        print("Sampai jumpa dan Terima kasih!")
