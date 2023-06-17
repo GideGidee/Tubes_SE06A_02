@@ -9,6 +9,7 @@ def pilih_item():
     print("4. Lihat pesanan")
     print("5. Pembayaran")
     print("6. Keluar")
+    print("tes")
 
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
