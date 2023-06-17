@@ -15,11 +15,11 @@ def pilih_item():
             tampil_tiket(tiket)
             break
         elif pilih == "2":
-            print("\nHasil Perkalian : ", hasil2)
+            print("\nHasil Perkalian : ")
         elif pilih == "3":
-            print("\nHasil Pembagian : ", hasil3)
+            print("\nHasil Pembagian : ")
         elif pilih == "4":
-            print("\nHasil Pengurangan : ", hasil4)
+            print("\nHasil Pengurangan : ")
         elif pilih == "5":
             keluar()
             break
