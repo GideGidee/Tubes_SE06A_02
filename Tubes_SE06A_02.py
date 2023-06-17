@@ -1,5 +1,40 @@
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
+def pilih_login():
+    print("===========SELAMAT DATANG DI KONSER==============")
+    print("Pilih opsi berikut!")
+    print("1. Admin")
+    print("2. User")
+    
+    pilihan = (input("\nMasukkan Pilihan Anda : "))
+
+    if pilihan == "1":
+        login_admin()
+    elif pilihan == "2":
+        pilih_item()
+    else:
+        print("Pilihan yang anda pilih tidak")
+    return pilihan
+
+def login_admin():
+    login = 0
+    while True:
+        username = input("Masukkan Username ")
+        password = input("Masukkan Password ")
+
+        if username == "admin" and password == "kelompok2nihbos":
+            print("Sugeng Rawuh", username, "!")
+            # masuk ke pilihan
+            break
+        if login == 3:
+            print("Jajalen Sandi karo Password mungkin enek seng salah!")
+            break
+        else:
+            print("Login raiso, Dang dijajal maneh")
+            login += 1
+    
+
+
 def pilih_item():
     print("===========SELAMAT DATANG DI CAHAYA TRANS==============")
     print("Pilih opsi berikut!")
