@@ -21,7 +21,8 @@ def pilih_item():
         elif pilih == "4":
             print("\nHasil Pengurangan : ", hasil4)
         elif pilih == "5":
-            print("\nHasil Pangkat : ", hasil5)
+            keluar()
+            break
         else:
             print("\nPilihan anda Tidak Valid!")
             continue
