@@ -1,6 +1,6 @@
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
-def pilih_item():
+def pilih_item():jjjj
     print("===========SELAMAT DATANG==============")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
