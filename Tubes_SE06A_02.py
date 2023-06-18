@@ -1,7 +1,7 @@
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
 def pilih_item():
-    print("===========SELAMAT DATANG DI CAHAYA TRANS==============")
+    print("===========SELAMAT DATANG DI PURWOVIBE: PEMESANAN TIKET KONSER PURWOKERTO==============")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
@@ -33,76 +33,12 @@ def pilih_item():
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
-        print("======================================")
-        print(f"Nomor Tiket: {'PWT-BKS001'}")
-        print(f"Tanggal Keberangkatan: {info['25 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['19.00 WIB']}")
-        print(f"Harga Tiket: {info['60000']}")
-        print(f"Jenis Kelas: {info['Ekonomi']}")
-        print(f"Jumlah Tiket Tersedia: {info['4']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT002'}")
-        print(f"Tanggal Keberangkatan: {info['25 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['22.15 WIB']}")
-        print(f"Harga Tiket: {info['120000']}")
-        print(f"Jenis Kelas: {info['Bisnis']}")
-        print(f"Jumlah Tiket Tersedia: {info['5']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT003'}")
-        print(f"Tanggal Keberangkatan: {info['26 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['14.20 WIB']}")
-        print(f"Harga Tiket: {info['150000']}")
-        print(f"Jenis Kelas: {info['Eksekutif']}")
-        print(f"Jumlah Tiket Tersedia: {info['3']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT004'}")
-        print(f"Tanggal Keberangkatan: {info['26 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['18.45 WIB']}")
-        print(f"Harga Tiket: {info['95000']}")
-        print(f"Jenis Kelas: {info['Bisnis']}")
-        print(f"Jumlah Tiket Tersedia: {info['6']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT005'}")
-        print(f"Tanggal Keberangkatan: {info['27 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['10.00 WIB']}")
-        print(f"Harga Tiket: {info['180000']}")
-        print(f"Jenis Kelas: {info['Eksekutif']}")
-        print(f"Jumlah Tiket Tersedia: {info['2']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT006'}")
-        print(f"Tanggal Keberangkatan: {info['27 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['16.00 WIB']}")
-        print(f"Harga Tiket: {info['70000']}")
-        print(f"Jenis Kelas: {info['Ekonomi']}")
-        print(f"Jumlah Tiket Tersedia: {info['1']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT007'}")
-        print(f"Tanggal Keberangkatan: {info['28 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['20.55 WIB']}")
-        print(f"Harga Tiket: {info['145000']}")
-        print(f"Jenis Kelas: {info['Eksekutif']}")
-        print(f"Jumlah Tiket Tersedia: {info['3']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT008'}")
-        print(f"Tanggal Keberangkatan: {info['28 Juni 2023']}")
-        print(f"Jam Keberangkatan: {info['23.00 WIB']}")
-        print(f"Harga Tiket: {info['80000']}")
-        print(f"Jenis Kelas: {info['Bisnis']}")
-        print(f"Jumlah Tiket Tersedia: {info['5']}")
+        print(f"Nomor Tiket: {nomor}")
+        print(f"Nama Konser: {info['nama_konser']}")
+        print(f"Lokasi Konser: {info['lokasi']}")
+        print(f"Tanggal Konser: {info['tanggal']}")
+        print(f"Harga Tiket: {info['harga']}")
+        print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
 
 def pilih_tiket(tiket):
@@ -134,22 +70,25 @@ def pesan_tiket(tiket):
 # Contoh data tiket
 tiket = {
     "TKT001": {
-        "artis": "Artis A",
-        "tanggal": "10 Juni 2023",
+        "nama_konser": "Konser Tulus Manusia 2023",
+        "lokasi": "Gor Satria Purwokerto",
+        "tanggal": "2 Juli 2023",
         "harga": 500000,
         "jumlah": 10
     },
     "TKT002": {
-        "artis": "Artis B",
+        "nama_konser": "Purwokerto Fest 2023",
+        "lokasi": "Taman Andhang Pangrenan",
         "tanggal": "15 Juli 2023",
         "harga": 750000,
         "jumlah": 5
     },
     "TKT003": {
-        "artis": "Artis C",
-        "tanggal": "20 Agustus 2023",
+        "nama_konser": "Yura Yunita Konser Tutur Batin",
+        "lokasi": "Gor Satria Purwokerto",
         "harga": 1000000,
-        "jumlah": 2
+        "jumlah": 2,
+        "tanggal": "20 Agustus 2023"
     }
 }
 
