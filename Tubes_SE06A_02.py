@@ -113,7 +113,7 @@ def pilihan_admin():
 
 #Tambah Tiket Admin
 def tambah_tiket():
-    nomor_tiket = input("Masukkan nomor tiket baru: ")
+    nomor_tiket = input("Masukkan nomor tiket: ")
     nama_konser = input("Masukkan nama konser: ")
     lokasi = input("Masukkan lokasi konser: ")
     tanggal = input("Masukkan tanggal konser: ")
