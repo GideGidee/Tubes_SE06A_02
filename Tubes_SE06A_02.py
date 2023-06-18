@@ -25,6 +25,7 @@ def login_admin():
 
         if username == "admin" and password == "kelompok2nihbos":
             print("Sugeng Rawuh", username, "!")
+            pilihan_admin()
             # masuk ke pilihan
             break
         if login == 3:
