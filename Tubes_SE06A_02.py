@@ -110,6 +110,7 @@ def tambah_tiket():
         'jumlah': jumlah
     }
     print("Tiket berhasil ditambahkan!")
+    tampil_tiket_a(tiket)
 
 
 #tampil Tiket User
