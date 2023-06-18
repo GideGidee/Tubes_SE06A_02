@@ -66,7 +66,7 @@ def pilih_item():
             return pilih_item()
 
 def pilihan_admin():
-    print("========== SELAMAT DATANG DI PurwoVibe ==========")
+    print("\n========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Lihat Tiket")
     print("2. Lihat Tiket yang terjual")
@@ -128,9 +128,9 @@ def tampil_tiket_u(tiket):
 
 #tampil Tiket Admin
 def tampil_tiket_a(tiket):
-    print("Tiket yang tersedia:")
+    print("\nTiket yang tersedia:")
     for nomor, info in tiket.items():
-        print(f"Nomor Tiket: {nomor}")
+        print(f"\nNomor Tiket: {nomor}")
         print(f"Nama Konser: {info['nama_konser']}")
         print(f"Lokasi Konser: {info['lokasi']}")
         print(f"Tanggal Konser: {info['tanggal']}")
