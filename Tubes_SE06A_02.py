@@ -2,7 +2,7 @@ import time
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
 def pilih_login():
-    print("===========SELAMAT DATANG DI KONSER==============")
+    print("===========SELAMAT DATANG DI PURWOVIBE: PEMESANAN TIKET KONSER PURWOKERTO==============")
     print("Pilih opsi berikut!")
     print("1. Admin")
     print("2. User")
@@ -14,7 +14,7 @@ def pilih_login():
     elif pilihan == "2":
         pilih_item()
     else:
-        print("Pilihan yang anda pilih tidak")
+        print("Pilihan yang Anda pilih tidak ada")
     return pilihan
 
 def login_admin():
@@ -28,7 +28,7 @@ def login_admin():
             pilihan_admin()
             break
         if login == 3:
-            print("Username dan Password yang anda input ada yang salah, coba lagi!")
+            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
             time.sleep(5)
             pilih_login()
             break
@@ -62,16 +62,16 @@ def pilih_item():
             keluar()
             break
         else:
-            print("\nPilihan anda Tidak Valid!")
+            print("\nPilihan Anda Tidak Valid!")
             return pilih_item()
 
 def pilihan_admin():
     print("===========SELAMAT DATANG DI ==============")
     print("Pilih opsi berikut!")
-    print("1. Lihat tiket")
+    print("1. Lihat Tiket")
     print("2. Lihat Tiket yang terjual")
-    print("3. Tambah tiket")
-    print("4. Hapus tiket")
+    print("3. Tambah Tiket")
+    print("4. Hapus Tiket")
     print("5. Keluar")
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
@@ -86,30 +86,8 @@ def pilihan_admin():
             keluar()
             break
         else:
-            print("\nPilihan anda Tidak Valid!")
+            print("\nPilihan Anda Tidak Valid!")
             return pilihan_admin()
-
-# Contoh data tiket
-tiket = {
-    "TKT001": {
-        "artis": "Artis A",
-        "tanggal": "10 Juni 2023",
-        "harga": 500000,
-        "jumlah": 10
-    },
-    "TKT002": {
-        "artis": "Artis B",
-        "tanggal": "15 Juli 2023",
-        "harga": 750000,
-        "jumlah": 5
-    },
-    "TKT003": {
-        "artis": "Artis C",
-        "tanggal": "20 Agustus 2023",
-        "harga": 1000000,
-        "jumlah": 2
-    }
-}
 
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
@@ -170,13 +148,13 @@ tiket = {
         "lokasi": "Taman Andhang Pangrenan",
         "tanggal": "15 Juli 2023",
         "harga": 750000,
-        "jumlah": 5
+        "jumlah": 20
     },
     "TKT003": {
         "nama_konser": "Yura Yunita Konser Tutur Batin",
         "lokasi": "Gor Satria Purwokerto",
         "harga": 1000000,
-        "jumlah": 2,
+        "jumlah": 30,
         "tanggal": "20 Agustus 2023"
     }
 }
