@@ -68,7 +68,7 @@ def pilihan_admin():
     print("===========SELAMAT DATANG DI ==============")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
-    print("2. Lihat pesanan")
+    print("2. Lihat Tiket yang terjual")
     print("3. Tambah tiket")
     print("4. Hapus tiket")
     print("5. Keluar")
