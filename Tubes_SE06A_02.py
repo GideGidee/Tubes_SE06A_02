@@ -217,7 +217,7 @@ def pembayaran(nama, pesanan):
             print("Jumlah Tiket:", jumlah_tiket)
             print("Harga Tiket:", harga_tiket)
             print("----------------------------")
-    print(f"\n Total harga yang harus dibayar: {total_harga}")
+    print(f"\nTotal harga yang harus dibayar: {total_harga}")
     while True:
         pilihan = input("Apakah anda ingin melanjutkan pembayaran?(iya/tidak): ")
         if pilihan.lower() == "iya":
@@ -247,7 +247,7 @@ def pembayaran(nama, pesanan):
 
 #User
 def pesan_tiket(tiket):
-    nomor_tiket = input("\n Masukkan nomor tiket yang ingin dipesan: ")
+    nomor_tiket = input("\nMasukkan nomor tiket yang ingin dipesan: ")
     if nomor_tiket.upper() in tiket:
         if tiket[nomor_tiket.upper()]['jumlah'] > 0:
             jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
