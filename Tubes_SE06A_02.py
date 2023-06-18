@@ -81,7 +81,8 @@ def pilihan_admin():
         elif pilih == "2":
             print("\nTiket Terjual Update ")
         elif pilih == "3":
-            print("\nTambah Tiket Update ")
+            tambah_tiket(tiket)
+            break
         elif pilih == "4":
             print("Hapus oMasih Update")
         elif pilih == "5":
@@ -116,6 +117,19 @@ def tampil_tiket_2(tiket):
         print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
     pilihan_admin()
+    
+#Tambah Tiket Admin
+def tambah_tiket(nomor, nama_konser, lokasi, tanggal, harga, jumlah):
+    tiket = {
+        'Nomor Tiket': nomor,
+        'Nama Konser': nama_konser,
+        'Lokasi Konser': lokasi,
+        'Tanggal Konser': tanggal,
+        'Jumlah Tiket Tersedia': jumlah
+    }
+    tambah_tiket.append(tiket)
+    print("Tiket berhasil ditambahkan!")
+
 
 #User
 def pesan_tiket(tiket):
