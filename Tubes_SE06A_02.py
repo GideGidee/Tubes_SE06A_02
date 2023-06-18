@@ -2,7 +2,7 @@ import time
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
 def pilih_login():
-    print("========== SELAMAT DATANG DI PURWOVIBE ==========")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Admin")
     print("2. User")
@@ -37,7 +37,7 @@ def login_admin():
             login += 1
 
 def pilih_item():
-    print("========== SELAMAT DATANG DI PURWOVIBE ==========")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
@@ -66,7 +66,7 @@ def pilih_item():
             return pilih_item()
 
 def pilihan_admin():
-    print("===========SELAMAT DATANG DI ==============")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Lihat Tiket")
     print("2. Lihat Tiket yang terjual")
