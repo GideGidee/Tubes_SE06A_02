@@ -113,6 +113,15 @@ tiket = {
 def tampil_tiket(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
+        print(f"Nomor Tiket: {nomor['TKT001']}")
+        print(f"Nama Artis: {info['Coldplay']}")
+        print(f"Tanggal Konser: {info['15 November 2023']}")
+        print(f"Harga Tiket: {info['']}")
+        print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
+        print("======================================")
+        
+        
+        
         print("======================================")
         print(f"Nomor Tiket: {'TKT001'}")
         print(f"Artis: {info['Artis A']}")
