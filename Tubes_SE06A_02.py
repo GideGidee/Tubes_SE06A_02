@@ -2,7 +2,7 @@ import time
 # PROYEK APLIKASI PEMESANAN TIKET KONSER AREA PURWOKERTO
 
 def pilih_login():
-    print("===========SELAMAT DATANG DI KONSER==============")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Admin")
     print("2. User")
@@ -14,7 +14,7 @@ def pilih_login():
     elif pilihan == "2":
         pilih_item()
     else:
-        print("Pilihan yang anda pilih tidak")
+        print("Pilihan yang Anda pilih tidak ada")
     return pilihan
 
 def login_admin():
@@ -26,10 +26,9 @@ def login_admin():
         if username == "admin" and password == "kelompok2nihbos":
             print("Sugeng Rawuh", username, "!")
             pilihan_admin()
-            # masuk ke pilihan
             break
         if login == 3:
-            print("Username dan Password yang anda input ada yang salah, coba lagi!")
+            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
             time.sleep(5)
             pilih_login()
             break
@@ -38,7 +37,7 @@ def login_admin():
             login += 1
 
 def pilih_item():
-    print("===========SELAMAT DATANG DI ==============")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
@@ -49,70 +48,55 @@ def pilih_item():
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            tampil_tiket(tiket)
+            tampil_tiket_1(tiket)
             break
         elif pilih == "2":
-            print("\nHasil Perkalian : ")
+            pesan_tiket(tiket)
+            break
         elif pilih == "3":
-            print("\nHasil Pembagian : ")
+            lihat_pesanan_nama(pesanan)
+            break
         elif pilih == "4":
-            print("\nHasil Pengurangan : ")
+            print("\nPembayaran update")
         elif pilih == "5":
             keluar()
             break
         else:
-            print("\nPilihan anda Tidak Valid!")
+            print("\nPilihan Anda Tidak Valid!")
             return pilih_item()
 
 def pilihan_admin():
-    print("===========SELAMAT DATANG DI ==============")
+    print("========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
-    print("1. Lihat tiket")
-    print("2. Lihat pesanan")
-    print("3. Tambah tiket")
-    print("4. Hapus tiket")
+    print("1. Lihat Tiket")
+    print("2. Lihat Tiket yang terjual")
+    print("3. Tambah Tiket")
+    print("4. Hapus Tiket")
     print("5. Keluar")
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            tampil_tiket(tiket)
+            tampil_tiket_2(tiket)
             break
         elif pilih == "2":
-            print("\nHasil Perkalian : ")
+            print("\nTiket Terjual Update ")
         elif pilih == "3":
-            print("\nHasil Pembagian : ")
+            tambah_tiket(tiket)
+            break
         elif pilih == "4":
-            keluar()
+            print("Hapus oMasih Update")
+        elif pilih == "5":
+            keluar_admin()
             break
         else:
-            print("\nPilihan anda Tidak Valid!")
+            print("\nPilihan Anda Tidak Valid!")
             return pilihan_admin()
 
-# Contoh data tiket
-tiket = {
-    "TKT001": {
-        "artis": "Artis A",
-        "tanggal": "10 Juni 2023",
-        "harga": 500000,
-        "jumlah": 10
-    },
-    "TKT002": {
-        "artis": "Artis B",
-        "tanggal": "15 Juli 2023",
-        "harga": 750000,
-        "jumlah": 5
-    },
-    "TKT003": {
-        "artis": "Artis C",
-        "tanggal": "20 Agustus 2023",
-        "harga": 1000000,
-        "jumlah": 2
-    }
-}
-
-def tampil_tiket(tiket):
+#tampil Tiket User
+def tampil_tiket_1(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
+
         print(f"Nomor Tiket: {nomor['TKT001']}")
         print(f"Nama Artis: {info['Coldplay']}")
         print(f"Tanggal Konser: {info['15 November 2023']}")
@@ -194,32 +178,127 @@ def tampil_tiket(tiket):
         print(f"Jumlah Tiket Tersedia: {info['1']}")
         print("======================================")
 
-def pilih_tiket(tiket):
-    nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
-    if nomor_tiket in tiket:
-        return nomor_tiket
-    else:
-        print("Nomor tiket tidak valid. Silakan coba lagi.")
-        return pilih_tiket(tiket)
+        print(f"Nomor Tiket: {nomor}")
+        print(f"Nama Konser: {info['nama_konser']}")
+        print(f"Lokasi Konser: {info['lokasi']}")
+        print(f"Tanggal Konser: {info['tanggal']}")
+        print(f"Harga Tiket: {info['harga']}")
+        print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
+        print("======================================")
+    pilih_item()
 
+#tampil Tiket Admin
+def tampil_tiket_2(tiket):
+    print("Tiket yang tersedia:")
+    for nomor, info in tiket.items():
+        print(f"Nomor Tiket: {nomor}")
+        print(f"Nama Konser: {info['nama_konser']}")
+        print(f"Lokasi Konser: {info['lokasi']}")
+        print(f"Tanggal Konser: {info['tanggal']}")
+        print(f"Harga Tiket: {info['harga']}")
+        print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
+        print("======================================")
+    pilihan_admin()
+    
+#Tambah Tiket Admin
+daftar_tiket = []  # Definisikan daftar_tiket sebagai list kosong di luar fungsi
+def tambah_tiket(nomor, nama_konser, lokasi, tanggal, harga, jumlah):
+    tiket = {
+        'Nomor Tiket': nomor,
+        'Nama Konser': nama_konser,
+        'Lokasi Konser': lokasi,
+        'Tanggal Konser': tanggal,
+        'Harga Tiket': harga,
+        'Jumlah Tiket Tersedia': jumlah
+    }
+    daftar_tiket.append(tiket)
+    print("Tiket berhasil ditambahkan!")
+
+
+
+#User
 def pesan_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
-    if nomor_tiket in tiket:
-        jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
-        if jumlah_tiket <= tiket[nomor_tiket]['jumlah']:
-            tiket[nomor_tiket]['jumlah'] -= jumlah_tiket
-            data_pemesanan = {
-                'nomor_tiket': nomor_tiket,
-                'jumlah_tiket': jumlah_tiket
-            }
-            return data_pemesanan
+    if nomor_tiket.upper() in tiket:
+        if tiket[nomor_tiket.upper()]['jumlah'] > 0:
+            jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
+            if jumlah_tiket <= tiket[nomor_tiket.upper()]['jumlah']:
+                tiket[nomor_tiket.upper()]['jumlah'] -= jumlah_tiket
+                nama = input("Masukkan nama Anda: ")
+                data_pemesanan = {
+                    'nomor_tiket': nomor_tiket.upper(),
+                    'jumlah_tiket': jumlah_tiket,
+                    'nama' : nama
+                }
+                pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
+                print("Pemesanan tiket berhasil!")
+                return data_pemesanan
+            else:
+                print("Maaf, jumlah tiket yang diminta tidak tersedia.")
         else:
-            print("Maaf, jumlah tiket yang diminta tidak tersedia.")
+            print("Maaf, tiket yang Anda pilih telah habis. Silakan pilih nomor tiket lain.")
     else:
         print("Nomor tiket tidak valid. Silakan coba lagi.")
 
     return None
 
+
+#Data tiket
+tiket = {
+    "TKT001": {
+        "nama_konser": "Konser Tulus Manusia 2023",
+        "lokasi": "Gor Satria Purwokerto",
+        "tanggal": "2 Juli 2023",
+        "harga": 500000,
+        "jumlah": 10
+    },
+    "TKT002": {
+        "nama_konser": "Purwokerto Fest 2023",
+        "lokasi": "Taman Andhang Pangrenan",
+        "tanggal": "15 Juli 2023",
+        "harga": 750000,
+        "jumlah": 20
+    },
+    "TKT003": {
+        "nama_konser": "Yura Yunita Konser Tutur Batin",
+        "lokasi": "Gor Satria Purwokerto",
+        "harga": 1000000,
+        "jumlah": 30,
+        "tanggal": "20 Agustus 2023"
+    }
+}
+
+#User
+def lihat_pesanan_nama(pesanan):
+    while True:
+        nama = input("Masukkan nama untuk mencari pesanan: ")
+        total_harga = 0
+        pesanan_ditemukan = False
+
+        print("Pesanan berdasarkan nama '", nama, "':")
+        for data in pesanan:
+            if data['nama'].lower() == nama.lower():
+                pesanan_ditemukan = True
+                nomor_tiket = data['nomor_tiket']
+                jumlah_tiket = data['jumlah_tiket']
+                harga_tiket = tiket[nomor_tiket]['harga']
+                total_harga += harga_tiket * jumlah_tiket
+                print("Nomor Tiket:", nomor_tiket)
+                print("Jumlah Tiket:", jumlah_tiket)
+                print("Harga Tiket:", harga_tiket)
+                print("----------------------------")
+
+        if pesanan_ditemukan:
+            print("Total Harga:", total_harga)
+            pilih_item(tiket)
+            break
+        else:
+            pilihan = input("Pesanan tidak ditemukan. Apakah Anda ingin mencoba lagi? (iya/tidak): ")
+            if pilihan.lower() != 'iya':
+                pilih_item(tiket)
+                break
+
+#User
 def riwayat_pemesanan(pesanan):
     if len(pesanan) > 0:
         print("Data Pemesanan: ")
@@ -233,6 +312,7 @@ def riwayat_pemesanan(pesanan):
 
 pesanan = []
 
+#User
 def keluar():
     while True:
         terus = input("\nApakah Anda ingin melanjutkan? (iya/tidak) = ")
@@ -242,5 +322,20 @@ def keluar():
             print("Pilihan Anda Tidak Valid!")
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
+    elif terus == "iya":
+        pilih_item()
+
+#Admin
+def keluar_admin():
+    while True:
+        terus = input("\nApakah Anda ingin melanjutkan? (iya/tidak) = ")
+        if terus == "iya" or terus == "tidak":
+            break
+        else:
+            print("Pilihan Anda Tidak Valid!")
+    if terus == "tidak":
+        print("Sampai jumpa dan Terima kasih!")
+    elif terus == "iya":
+        pilihan_admin()
 
 pilih_login()
