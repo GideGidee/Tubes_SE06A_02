@@ -48,7 +48,7 @@ def pilih_item():
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            tampil_tiket_1(tiket)
+            tampil_tiket_u(tiket)
             break
         elif pilih == "2":
             pesan_tiket(tiket)
@@ -76,7 +76,7 @@ def pilihan_admin():
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
-            tampil_tiket_2(tiket)
+            tampil_tiket_a(tiket)
             break
         elif pilih == "2":
             print("\nTiket Terjual Update ")
@@ -93,89 +93,9 @@ def pilihan_admin():
             return pilihan_admin()
 
 #tampil Tiket User
-def tampil_tiket_1(tiket):
+def tampil_tiket_u(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
-
-        print(f"Nomor Tiket: {nomor['TKT001']}")
-        print(f"Nama Artis: {info['Coldplay']}")
-        print(f"Tanggal Konser: {info['15 November 2023']}")
-        print(f"Harga Tiket: {info['']}")
-        print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT001'}")
-        print(f"Artis: {info['Artis A']}")
-        print(f"Tanggal: {info['25 Juni 2023']}")
-        print(f"Jam: {info['15.00 WIB']}")
-        print(f"Harga Tiket: {info['100000']}")
-        print(f"Jumlah Tiket Tersedia: {info['2']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT002'}")
-        print(f"Artis: {info['Artis B']}")
-        print(f"Tanggal: {info['25 Juni 2023']}")
-        print(f"Jam: {info['19.00 WIB']}")
-        print(f"Harga Tiket: {info['120000']}")
-        print(f"Jumlah Tiket Tersedia: {info['5']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT003'}")
-        print(f"Artis: {info['Artis C']}")
-        print(f"Tanggal: {info['26 Juni 2023']}")
-        print(f"Jam: {info['16.00 WIB']}")
-        print(f"Harga Tiket: {info['120000']}")
-        print(f"Jumlah Tiket Tersedia: {info['4']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT004'}")
-        print(f"Artis: {info['Artis D']}")
-        print(f"Tanggal: {info['26 Juni 2023']}")
-        print(f"Jam: {info['20 .00 WIB']}")
-        print(f"Harga Tiket: {info['150000']}")
-        print(f"Jumlah Tiket Tersedia: {info['7']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT005'}")
-        print(f"Artis: {info['Artis E']}")
-        print(f"Tanggal: {info['27 Juni 2023']}")
-        print(f"Jam: {info['19.00 WIB']}")
-        print(f"Harga Tiket: {info['135000']}")
-        print(f"Jumlah Tiket Tersedia: {info['5']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT006'}")
-        print(f"Artis: {info['Artis F']}")
-        print(f"Tanggal: {info['27 Juni 2023']}")
-        print(f"Jam: {info['21.00 WIB']}")
-        print(f"Harga Tiket: {info['100000']}")
-        print(f"Jumlah Tiket Tersedia: {info['6']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT007'}")
-        print(f"Artis: {info['Artis G']}")
-        print(f"Tanggal: {info['28 Juni 2023']}")
-        print(f"Jam: {info['15.00 WIB']}")
-        print(f"Harga Tiket: {info['145000']}")
-        print(f"Jumlah Tiket Tersedia: {info['8']}")
-        print("======================================")
-        
-        print("======================================")
-        print(f"Nomor Tiket: {'TKT008'}")
-        print(f"Artis: {info['Artis H']}")
-        print(f"Tanggal: {info['28 Juni 2023']}")
-        print(f"Jam: {info['19.00 WIB']}")
-        print(f"Harga Tiket: {info['90000']}")
-        print(f"Jumlah Tiket Tersedia: {info['1']}")
-        print("======================================")
-
         print(f"Nomor Tiket: {nomor}")
         print(f"Nama Konser: {info['nama_konser']}")
         print(f"Lokasi Konser: {info['lokasi']}")
@@ -186,7 +106,7 @@ def tampil_tiket_1(tiket):
     pilih_item()
 
 #tampil Tiket Admin
-def tampil_tiket_2(tiket):
+def tampil_tiket_a(tiket):
     print("Tiket yang tersedia:")
     for nomor, info in tiket.items():
         print(f"Nomor Tiket: {nomor}")
