@@ -54,7 +54,8 @@ def pilih_item():
             pesan_tiket(tiket)
             break
         elif pilih == "3":
-            print("\nHasil Pembagian : ")
+            lihat_pesanan_nama(pesanan)
+            break
         elif pilih == "4":
             print("\nHasil Pengurangan : ")
         elif pilih == "5":
@@ -195,18 +196,18 @@ def pilih_tiket(tiket):
 
 def pesan_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
-    if nomor_tiket in tiket:
-        if tiket[nomor_tiket]['jumlah'] > 0:
+    if nomor_tiket.upper() in tiket:
+        if tiket[nomor_tiket.upper()]['jumlah'] > 0:
             jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
-            if jumlah_tiket <= tiket[nomor_tiket]['jumlah']:
-                tiket[nomor_tiket]['jumlah'] -= jumlah_tiket
+            if jumlah_tiket <= tiket[nomor_tiket.upper()]['jumlah']:
+                tiket[nomor_tiket.upper()]['jumlah'] -= jumlah_tiket
                 nama = input("Masukkan nama Anda: ")
                 data_pemesanan = {
-                    'nomor_tiket': nomor_tiket,
+                    'nomor_tiket': nomor_tiket.upper(),
                     'jumlah_tiket': jumlah_tiket,
                     'nama' : nama
                 }
-                pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
+                pesanan_tiket.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
                 print("Pemesanan tiket berhasil!")
                 return data_pemesanan
             else:
@@ -217,6 +218,35 @@ def pesan_tiket(tiket):
         print("Nomor tiket tidak valid. Silakan coba lagi.")
 
     return None
+
+def lihat_pesanan_nama(pesanan):
+    while True:
+        nama = input("Masukkan nama untuk mencari pesanan: ")
+        total_harga = 0
+        pesanan_ditemukan = False
+
+        print("Pesanan berdasarkan nama '", nama, "':")
+        for data in pesanan:
+            if data['nama'].lower() == nama.lower():
+                pesanan_ditemukan = True
+                nomor_tiket = data['nomor_tiket']
+                jumlah_tiket = data['jumlah_tiket']
+                harga_tiket = tiket[nomor_tiket]['harga']
+                total_harga += harga_tiket * jumlah_tiket
+                print("Nomor Tiket:", nomor_tiket)
+                print("Jumlah Tiket:", jumlah_tiket)
+                print("Harga Tiket:", harga_tiket)
+                print("----------------------------")
+
+        if pesanan_ditemukan:
+            print("Total Harga:", total_harga)
+            pilih_item(tiket)
+            break
+        else:
+            pilihan = input("Pesanan tidak ditemukan. Apakah Anda ingin mencoba lagi? (iya/tidak): ")
+            if pilihan.lower() != 'iya':
+                pilih_item(tiket)
+                break
 
 def riwayat_pemesanan(pesanan):
     if len(pesanan) > 0:
