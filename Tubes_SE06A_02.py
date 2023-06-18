@@ -91,8 +91,7 @@ def pilihan_admin():
         else:
             print("\nPilihan Anda Tidak Valid!")
             return pilihan_admin()
-        
-        
+
 #Tambah Tiket Admin
 def tambah_tiket():
     nomor_tiket = input("Masukkan nomor tiket baru: ")
@@ -111,7 +110,6 @@ def tambah_tiket():
     }
     print("Tiket berhasil ditambahkan!")
     tampil_tiket_a(tiket)
-
 
 #tampil Tiket User
 def tampil_tiket_u(tiket):
@@ -139,7 +137,6 @@ def tampil_tiket_a(tiket):
         print("======================================")
     pilihan_admin()
 
-
 #User
 def pesan_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
@@ -166,7 +163,6 @@ def pesan_tiket(tiket):
         print("Nomor tiket tidak valid. Silakan coba lagi.")
 
     return None
-
 
 #Data tiket
 tiket = {
@@ -262,5 +258,4 @@ def keluar_admin():
         print("Sampai jumpa dan Terima kasih!")
     elif terus == "iya":
         pilihan_admin()
-
 pilih_login()
