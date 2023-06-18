@@ -153,6 +153,7 @@ def pesan_tiket(tiket):
                 }
                 pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
                 print("Pemesanan tiket berhasil!")
+                pilih_item()
                 return data_pemesanan
             else:
                 print("Maaf, jumlah tiket yang diminta tidak tersedia.")
@@ -211,7 +212,7 @@ def lihat_pesanan_nama(pesanan):
 
         if pesanan_ditemukan:
             print("Total Harga:", total_harga)
-            pilih_item(tiket)
+            pilih_item()
             break
         else:
             pilihan = input("Pesanan tidak ditemukan. Apakah Anda ingin mencoba lagi? (iya/tidak): ")
