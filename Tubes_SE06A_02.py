@@ -37,11 +37,7 @@ def login_admin():
             login += 1
 
 def pilih_item():
-<<<<<<< HEAD
     print("===========SELAMAT DATANG DI PURWOVIBE: PEMESANAN TIKET KONSER PURWOKERTO==============")
-=======
-    print("===========SELAMAT DATANG DI ==============")
->>>>>>> 7dd7af6cc2bd7ad3b37dca58c34a5f5a38a5e780
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
@@ -159,7 +155,7 @@ def pesan_tiket(tiket):
 
     return None
 
-<<<<<<< HEAD
+
 # Contoh data tiket
 tiket = {
     "TKT001": {
@@ -184,7 +180,7 @@ tiket = {
         "tanggal": "20 Agustus 2023"
     }
 }
-=======
+
 def lihat_pesanan_nama(pesanan):
     while True:
         nama = input("Masukkan nama untuk mencari pesanan: ")
@@ -213,7 +209,7 @@ def lihat_pesanan_nama(pesanan):
             if pilihan.lower() != 'iya':
                 pilih_item(tiket)
                 break
->>>>>>> 7dd7af6cc2bd7ad3b37dca58c34a5f5a38a5e780
+
 
 def riwayat_pemesanan(pesanan):
     if len(pesanan) > 0:
