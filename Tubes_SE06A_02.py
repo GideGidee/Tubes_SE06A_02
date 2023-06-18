@@ -79,12 +79,13 @@ def pilihan_admin():
             tampil_tiket_a(tiket)
             break
         elif pilih == "2":
-            print("\nTiket Terjual Update ")
+            tiket_terjual()
+            break
         elif pilih == "3":
             tambah_tiket()
             break
         elif pilih == "4":
-            print("Hapus oMasih Update")
+            hapus_pesanan(pesanan)
         elif pilih == "5":
             keluar_admin()
             break
@@ -111,6 +112,20 @@ def tambah_tiket():
     print("Tiket berhasil ditambahkan!")
     tampil_tiket_a(tiket)
 
+
+def tiket_terjual():
+    if len(pesanan) == 0:
+        print("Tiket belom ada yang terjual")
+        pilihan_admin()
+    else:
+        print("Tiket yang terjual: ")
+        for data in pesanan:
+            nomor_tiket = data['nomor_tiket']
+            jumlah_tiket = data['jumlah_tiket']
+            print(f"Nomor tiket: {nomor_tiket}")
+            print(f"Jumlah tiket: {jumlah_tiket}")
+        pilihan_admin()
+            
 #tampil Tiket User
 def tampil_tiket_u(tiket):
     print("Tiket yang tersedia:")
@@ -136,6 +151,27 @@ def tampil_tiket_a(tiket):
         print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
     pilihan_admin()
+
+
+#Hapus Admin
+def hapus_pesanan(pesanan):
+    while True:
+        nomor_tiket = input("Masukkan nomor tiket yang ingin dihapus: ")
+        for i in range(len(pesanan)):
+            if pesan_tiket[i]['nomor_tiket'] == nomor_tiket:
+                pesanan_terhapus = pesan_tiket.pop(i)
+                tiket[pesanan_terhapus['nomor_tiket']]['jumlah'] += pesanan_terhapus['jumlah_tiket']
+                print("Pesanan dengan nomor tiket '", nomor_tiket, "' telah dihapus.")
+                pilih_item(tiket)
+                break
+            else:
+                break
+        for i in range(len(pesanan)):
+            if pesan_tiket[i]['nomor_tiket'] != nomor_tiket:
+                pilihan = input(f"Pesanan dengan nomor tiket '{nomor_tiket}' tidak ditemukan. Apakah Anda ingin mencoba lagi? (iya/tidak): ")
+                if pilihan.lower() != 'iya':
+                    pilih_item(tiket)
+                    break
 
 #User
 def pesan_tiket(tiket):
@@ -256,6 +292,7 @@ def keluar_admin():
             print("Pilihan Anda Tidak Valid!")
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
+        pilih_login()
     elif terus == "iya":
         pilihan_admin()
 pilih_login()
