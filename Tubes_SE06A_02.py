@@ -101,6 +101,7 @@ def tampil_tiket(tiket):
         print(f"Harga Tiket: {info['harga']}")
         print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
+    pilih_item()
 
 def pilih_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
