@@ -104,8 +104,6 @@ def tampil_tiket_1(tiket):
         print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
         
-        
-        
         print("======================================")
         print(f"Nomor Tiket: {'TKT001'}")
         print(f"Artis: {info['Artis A']}")
