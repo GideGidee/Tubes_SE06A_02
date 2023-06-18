@@ -81,7 +81,7 @@ def pilihan_admin():
         elif pilih == "2":
             print("\nTiket Terjual Update ")
         elif pilih == "3":
-            tambah_tiket(tiket)
+            tambah_tiket()
             break
         elif pilih == "4":
             print("Hapus oMasih Update")
