@@ -207,7 +207,7 @@ def pesan_tiket(tiket):
                     'jumlah_tiket': jumlah_tiket,
                     'nama' : nama
                 }
-                pesanan_tiket.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
+                pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
                 print("Pemesanan tiket berhasil!")
                 return data_pemesanan
             else:
