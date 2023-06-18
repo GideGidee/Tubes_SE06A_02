@@ -26,7 +26,6 @@ def login_admin():
         if username == "admin" and password == "kelompok2nihbos":
             print("Sugeng Rawuh", username, "!")
             pilihan_admin()
-            # masuk ke pilihan
             break
         if login == 3:
             print("Username dan Password yang anda input ada yang salah, coba lagi!")
@@ -197,16 +196,23 @@ def pilih_tiket(tiket):
 def pesan_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
     if nomor_tiket in tiket:
-        jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
-        if jumlah_tiket <= tiket[nomor_tiket]['jumlah']:
-            tiket[nomor_tiket]['jumlah'] -= jumlah_tiket
-            data_pemesanan = {
-                'nomor_tiket': nomor_tiket,
-                'jumlah_tiket': jumlah_tiket
-            }
-            return data_pemesanan
+        if tiket[nomor_tiket]['jumlah'] > 0:
+            jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
+            if jumlah_tiket <= tiket[nomor_tiket]['jumlah']:
+                tiket[nomor_tiket]['jumlah'] -= jumlah_tiket
+                nama = input("Masukkan nama Anda: ")
+                data_pemesanan = {
+                    'nomor_tiket': nomor_tiket,
+                    'jumlah_tiket': jumlah_tiket,
+                    'nama' : nama
+                }
+                pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
+                print("Pemesanan tiket berhasil!")
+                return data_pemesanan
+            else:
+                print("Maaf, jumlah tiket yang diminta tidak tersedia.")
         else:
-            print("Maaf, jumlah tiket yang diminta tidak tersedia.")
+            print("Maaf, tiket yang Anda pilih telah habis. Silakan pilih nomor tiket lain.")
     else:
         print("Nomor tiket tidak valid. Silakan coba lagi.")
 
