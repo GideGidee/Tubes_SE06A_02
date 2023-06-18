@@ -37,13 +37,14 @@ def login_admin():
             login += 1
 
 def pilih_item():
-    print("========== SELAMAT DATANG DI PurwoVibe ==========")
+    print("\n========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
     print("1. Lihat tiket")
     print("2. Pesan tiket")
     print("3. Lihat pesanan")
-    print("4. Pembayaran")
-    print("5. Keluar")
+    print("4. Hapus pesanan")
+    print("5. Pembayaran")
+    print("6. Keluar")
 
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
@@ -55,10 +56,20 @@ def pilih_item():
             break
         elif pilih == "3":
             lihat_pesanan_nama(pesanan)
-            break
         elif pilih == "4":
-            print("\nPembayaran update")
+            hapus_pesanan(pesanan)
+            break
         elif pilih == "5":
+            while True:
+                nama = input("Masukkan nama anda")
+                if nama in [data['nama'] for data in pesanan]: 
+                    pembayaran(nama, pesanan)
+                    break
+                elif nama not in [data['nama'] for data in pesanan]:
+                    print("Nama tidak ditemukan dalam pesanan.")
+                    continue
+            break
+        elif pilih == "6":
             keluar()
             break
         else:
@@ -85,7 +96,7 @@ def pilihan_admin():
             tambah_tiket()
             break
         elif pilih == "4":
-            hapus_pesanan(pesanan)
+            print("")
         elif pilih == "5":
             keluar_admin()
             break
@@ -111,7 +122,6 @@ def tambah_tiket():
     }
     print("Tiket berhasil ditambahkan!")
     tampil_tiket_a(tiket)
-
 
 def tiket_terjual():
     if len(pesanan) == 0:
@@ -152,8 +162,7 @@ def tampil_tiket_a(tiket):
         print("======================================")
     pilihan_admin()
 
-
-#Hapus Admin
+#Hapus User
 def hapus_pesanan(pesanan):
     while True:
         nomor_tiket = input("Masukkan nomor tiket yang ingin dihapus: ")
@@ -174,6 +183,47 @@ def hapus_pesanan(pesanan):
                     break
 
 #User
+def pembayaran(nama, pesanan):
+    total_harga = 0
+    for data in pesanan:
+        if data['nama'].lower() == nama.lower():
+            nomor_tiket = data['nomor_tiket']
+            jumlah_tiket = data['jumlah_tiket']
+            harga_tiket = tiket[nomor_tiket]['harga']
+            total_harga += harga_tiket * jumlah_tiket
+            print("Nomor Tiket:", nomor_tiket)
+            print("Jumlah Tiket:", jumlah_tiket)
+            print("Harga Tiket:", harga_tiket)
+            print("----------------------------")
+    print(f"Total harga yang harus dibayar: {total_harga}")
+    while True:
+        pilihan = input("Apakah anda ingin melanjutkan pembayaran?(iya/tidak): ")
+        if pilihan.lower() == "iya":
+            print("----------------------------")
+            print("Silahkan melakukan pembayaran melalui VA: 123xxxxxxx(Mandiri)")
+            while True:
+                pilih = input("Apakah anda ingin memesan tiket lagi?"
+                        "\nJika tidak maka anda akan kembali!(iya/tidak): ")
+                print("----------------------------")
+                if pilih.lower() == "iya":
+                    pesan_tiket(tiket)
+                    break
+                elif pilih.lower() == "tidak":
+                    pilih_item()
+                    break
+                else:
+                    print("Pilihan anda tidak valid! Silahkan coba lagi")
+                    continue
+            break
+        elif pilihan.lower() == "tidak":
+            print("Terima kasih telah memesan tiket!")
+            pilih_item()
+            break
+        else:
+            print("Pilihan anda tidak valid! Silahkan coba lagi")
+            continue
+
+#User
 def pesan_tiket(tiket):
     nomor_tiket = input("Masukkan nomor tiket yang ingin dipesan: ")
     if nomor_tiket.upper() in tiket:
@@ -189,7 +239,7 @@ def pesan_tiket(tiket):
                 }
                 pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
                 print("Pemesanan tiket berhasil!")
-                pilih_item()
+                pembayaran(nama, pesanan)
                 return data_pemesanan
             else:
                 print("Maaf, jumlah tiket yang diminta tidak tersedia.")
