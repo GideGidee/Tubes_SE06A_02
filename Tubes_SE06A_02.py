@@ -125,6 +125,7 @@ def tambah_tiket(nomor, nama_konser, lokasi, tanggal, harga, jumlah):
         'Nama Konser': nama_konser,
         'Lokasi Konser': lokasi,
         'Tanggal Konser': tanggal,
+        'Harga Tiket':harga,
         'Jumlah Tiket Tersedia': jumlah
     }
     tambah_tiket.append(tiket)
