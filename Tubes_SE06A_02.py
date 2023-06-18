@@ -69,7 +69,8 @@ def pilihan_admin():
     print("1. Lihat tiket")
     print("2. Lihat pesanan")
     print("3. Tambah tiket")
-    print("4. Keluar")
+    print("4. Hapus tiket")
+    print("5. Keluar")
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
         if pilih == "1":
