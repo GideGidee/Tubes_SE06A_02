@@ -79,7 +79,8 @@ def pilihan_admin():
             tampil_tiket_a(tiket)
             break
         elif pilih == "2":
-            print("\nTiket Terjual Update ")
+            tiket_terjual()
+            break
         elif pilih == "3":
             tambah_tiket()
             break
@@ -112,7 +113,19 @@ def tambah_tiket():
     print("Tiket berhasil ditambahkan!")
     tampil_tiket_a(tiket)
 
-
+def tiket_terjual():
+    if len(pesanan) == 0:
+        print("Tiket belom ada yang terjual")
+        pilihan_admin()
+    else:
+        print("Tiket yang terjual: ")
+        for data in pesanan:
+            nomor_tiket = data['nomor_tiket']
+            jumlah_tiket = data['jumlah_tiket']
+            print(f"Nomor tiket: {nomor_tiket}")
+            print(f"Jumlah tiket: {jumlah_tiket}")
+        pilihan_admin()
+            
 #tampil Tiket User
 def tampil_tiket_u(tiket):
     print("Tiket yang tersedia:")
