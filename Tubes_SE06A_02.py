@@ -91,6 +91,25 @@ def pilihan_admin():
         else:
             print("\nPilihan Anda Tidak Valid!")
             return pilihan_admin()
+        
+        
+#Tambah Tiket Admin
+def tambah_tiket():
+    nomor_tiket = input("Masukkan nomor tiket baru: ")
+    nama_konser = input("Masukkan nama konser: ")
+    lokasi = input("Masukkan lokasi konser: ")
+    tanggal = input("Masukkan tanggal konser: ")
+    harga = int(input("Masukkan harga tiket: "))
+    jumlah = int(input("Masukkan jumlah tiket tersedia: "))
+
+    tiket[nomor_tiket] = {
+        'nama_konser': nama_konser,
+        'lokasi': lokasi,
+        'tanggal': tanggal,
+        'harga': harga,
+        'jumlah': jumlah
+    }
+    print("Tiket berhasil ditambahkan!")
 
 #tampil Tiket User
 def tampil_tiket_u(tiket):
@@ -117,24 +136,6 @@ def tampil_tiket_a(tiket):
         print(f"Jumlah Tiket Tersedia: {info['jumlah']}")
         print("======================================")
     pilihan_admin()
-    
-#Tambah Tiket Admin
-def tambah_tiket():
-    nomor_tiket = input("Masukkan nomor tiket baru: ")
-    nama_konser = input("Masukkan nama konser: ")
-    lokasi = input("Masukkan lokasi konser: ")
-    tanggal = input("Masukkan tanggal konser: ")
-    harga = int(input("Masukkan harga tiket: "))
-    jumlah = int(input("Masukkan jumlah tiket tersedia: "))
-
-    tiket[nomor_tiket] = {
-        'nama_konser': nama_konser,
-        'lokasi': lokasi,
-        'tanggal': tanggal,
-        'harga': harga,
-        'jumlah': jumlah
-    }
-    print("Tiket berhasil ditambahkan!")
 
 
 #User
