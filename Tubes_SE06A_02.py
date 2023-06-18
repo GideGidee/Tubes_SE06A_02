@@ -201,19 +201,22 @@ def tampil_tiket_2(tiket):
     pilihan_admin()
     
 #Tambah Tiket Admin
-daftar_tiket = []  # Definisikan daftar_tiket sebagai list kosong di luar fungsi
-def tambah_tiket(nomor, nama_konser, lokasi, tanggal, harga, jumlah):
-    tiket = {
-        'Nomor Tiket': nomor,
-        'Nama Konser': nama_konser,
-        'Lokasi Konser': lokasi,
-        'Tanggal Konser': tanggal,
-        'Harga Tiket': harga,
-        'Jumlah Tiket Tersedia': jumlah
-    }
-    daftar_tiket.append(tiket)
-    print("Tiket berhasil ditambahkan!")
+def tambah_tiket():
+    nomor_tiket = input("Masukkan nomor tiket baru: ")
+    nama_konser = input("Masukkan nama konser: ")
+    lokasi = input("Masukkan lokasi konser: ")
+    tanggal = input("Masukkan tanggal konser: ")
+    harga = int(input("Masukkan harga tiket: "))
+    jumlah = int(input("Masukkan jumlah tiket tersedia: "))
 
+    tiket[nomor_tiket] = {
+        'nama_konser': nama_konser,
+        'lokasi': lokasi,
+        'tanggal': tanggal,
+        'harga': harga,
+        'jumlah': jumlah
+    }
+    print("Tiket berhasil ditambahkan!")
 
 
 #User
