@@ -67,7 +67,7 @@ def pilih_item():
             break
         elif pilih == "5":
             while True:
-                nama = input("Masukkan nama anda")
+                nama = input("Masukkan nama Anda : ")
                 if nama in [data['nama'] for data in pesanan]: 
                     pembayaran(nama, pesanan)
                     break
@@ -85,10 +85,10 @@ def pilih_item():
 def pilihan_admin():
     print("\n========== SELAMAT DATANG DI PurwoVibe ==========")
     print("Pilih opsi berikut!")
-    print("1. Lihat Tiket")
-    print("2. Lihat Tiket yang terjual")
-    print("3. Tambah Tiket")
-    print("4. Hapus Tiket")
+    print("1. Lihat tiket")
+    print("2. Lihat tiket yang terjual")
+    print("3. Tambah tiket")
+    print("4. Hapus tiket")
     print("5. Keluar")
     pilih = (input("\nMasukkan Pilihan Anda : "))
     while True:
