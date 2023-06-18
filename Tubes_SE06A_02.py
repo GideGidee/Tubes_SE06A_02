@@ -85,7 +85,7 @@ def pilihan_admin():
         elif pilih == "4":
             print("Masih Update")
         elif pilih == "5":
-            keluar()
+            keluar_admin()
             break
         else:
             print("\nPilihan Anda Tidak Valid!")
@@ -213,5 +213,19 @@ def keluar():
             print("Pilihan Anda Tidak Valid!")
     if terus == "tidak":
         print("Sampai jumpa dan Terima kasih!")
+    elif terus == "iya":
+        pilih_item()
+
+def keluar_admin():
+    while True:
+        terus = input("\nApakah Anda ingin melanjutkan? (iya/tidak) = ")
+        if terus == "iya" or terus == "tidak":
+            break
+        else:
+            print("Pilihan Anda Tidak Valid!")
+    if terus == "tidak":
+        print("Sampai jumpa dan Terima kasih!")
+    elif terus == "iya":
+        pilihan_admin()
 
 pilih_login()
