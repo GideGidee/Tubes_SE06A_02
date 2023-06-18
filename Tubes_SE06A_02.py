@@ -83,6 +83,8 @@ def pilihan_admin():
         elif pilih == "3":
             print("\nHasil Pembagian : ")
         elif pilih == "4":
+            print("Masih Update")
+        elif pilih == "5":
             keluar()
             break
         else:
