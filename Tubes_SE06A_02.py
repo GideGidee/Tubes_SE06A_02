@@ -6,16 +6,22 @@ def pilih_login():
     print("Pilih opsi berikut!")
     print("1. Admin")
     print("2. User")
+    print("3. Keluar")
+    while True: 
+        pilihan = (input("\nMasukkan Pilihan Anda : "))
 
-    pilihan = (input("\nMasukkan Pilihan Anda : "))
-
-    if pilihan == "1":
-        login_admin()
-    elif pilihan == "2":
-        pilih_item()
-    else:
-        print("Pilihan yang Anda pilih tidak ada")
-    return pilihan
+        if pilihan == "1":
+            login_admin()
+            break
+        elif pilihan == "2":
+            pilih_item()
+            break
+        elif pilihan == "3":
+            print("Terimakasih Telah Memakai Aplikasi ini!")
+            break
+        else:
+            print("Pilihan yang Anda pilih tidak ada")
+            continue
 
 def login_admin():
     login = 0
@@ -96,7 +102,8 @@ def pilihan_admin():
             tambah_tiket()
             break
         elif pilih == "4":
-            print("")
+            hapus_tiket(tiket)
+            break
         elif pilih == "5":
             keluar_admin()
             break
@@ -123,6 +130,7 @@ def tambah_tiket():
     print("Tiket berhasil ditambahkan!")
     tampil_tiket_a(tiket)
 
+#Tiket Terjual Admin
 def tiket_terjual():
     if len(pesanan) == 0:
         print("Tiket belom ada yang terjual")
@@ -135,7 +143,21 @@ def tiket_terjual():
             print(f"Nomor tiket: {nomor_tiket}")
             print(f"Jumlah tiket: {jumlah_tiket}")
         pilihan_admin()
-            
+
+#Hapus Tiket
+def hapus_tiket(tiket):
+    while True:
+        nomor_tiket = input("Masukkan Nomor Tiket: ")
+        if nomor_tiket in tiket:
+            del tiket[nomor_tiket]
+            print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
+            pilihan_admin()
+            break
+        else:
+            print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
+            continue
+
+
 #tampil Tiket User
 def tampil_tiket_u(tiket):
     print("Tiket yang tersedia:")
