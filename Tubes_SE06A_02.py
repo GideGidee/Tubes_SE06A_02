@@ -52,7 +52,8 @@ def pilih_item():
             tampil_tiket(tiket)
             break
         elif pilih == "2":
-            print("\nHasil Perkalian : ")
+            pesan_tiket(tiket)
+            break
         elif pilih == "3":
             print("\nHasil Pembagian : ")
         elif pilih == "4":
