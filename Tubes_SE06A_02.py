@@ -317,7 +317,7 @@ def pembayaran(nama, pesanan):
                     continue
             break
         elif pilihan.lower() == "tidak":
-            print("Terima kasih telah memesan tiket!")
+            print("Terima kasih, silahkan datang kembali!")
             pilih_item()
             break
         else:
