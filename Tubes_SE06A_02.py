@@ -162,16 +162,14 @@ def tambah_tiket():
 
 #Hapus Tiket admin
 def hapus_tiket(tiket):
-    while True:
-        nomor_tiket = input("Masukkan Nomor Tiket: ")
-        if nomor_tiket in tiket:
-            del tiket[nomor_tiket]
-            print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
-            pilihan_admin()
-            break
-        else:
-            print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
-            continue
+    nomor_tiket = input("Masukkan Nomor Tiket: ")
+    if nomor_tiket in tiket:
+        del tiket[nomor_tiket]
+        print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
+        pilihan_admin()
+    else:
+        print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
+        pilihan_admin()
 
 #Admin
 def keluar_admin():
@@ -280,7 +278,7 @@ def hapus_pesanan(pesanan, nama, no_tiket):
             break
 
     if not pesanan_ditemukan:
-        print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{nomor_tiket}' tidak ditemukan.")
+        print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
         pilih_item()
 
 #User
