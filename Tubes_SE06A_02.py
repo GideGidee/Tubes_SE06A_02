@@ -34,12 +34,12 @@ def login_admin():
             pilihan_admin()
             break
         if login == 3:
-            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
+            print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
             time.sleep(5)
             pilih_login()
             break
         else:
-            print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
+            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
             login += 1
 
 def pilih_item():
