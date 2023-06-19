@@ -200,8 +200,6 @@ def keluar_admin():
         elif terus == "tidak":
             pilihan_admin()
             break
-        else:
-            print("Pilihan Anda Tidak Valid!")
 
 #tampil Tiket User
 def tampil_tiket_u(tiket):
@@ -375,8 +373,6 @@ def keluar():
         elif terus == "tidak":
             pilih_item()
             break
-        else:
-            print("Pilihan Anda Tidak Valid!")
 
 #Data tiket
 tiket = {
