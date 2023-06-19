@@ -162,14 +162,27 @@ def tambah_tiket():
 
 #Hapus Tiket admin
 def hapus_tiket(tiket):
-    nomor_tiket = input("Masukkan Nomor Tiket: ")
-    if nomor_tiket in tiket:
-        del tiket[nomor_tiket]
-        print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
-        pilihan_admin()
-    else:
-        print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
-        pilihan_admin()
+    while True:
+        nomor_tiket = input("Masukkan Nomor Tiket: ")
+        if nomor_tiket in tiket:
+            del tiket[nomor_tiket]
+            print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
+            pilihan_admin()
+            break
+        else:
+            print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
+            while True:
+                pilih = input("Apakah anda ingin mengulangnya?(iya/tidak): ")
+                if pilih == "iya" or pilih == "tidak":
+                    break
+                else:
+                    print("Pilihan anda tidak valid!")
+                    continue
+            if pilih == "iya":
+                continue
+            elif pilih == "tidak":
+                pilihan_admin()
+                break
 
 #Admin
 def keluar_admin():
