@@ -34,12 +34,12 @@ def login_admin():
             pilihan_admin()
             break
         if login == 3:
-            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
+            print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
             time.sleep(5)
             pilih_login()
             break
         else:
-            print("Login tidak dapat diteruskan, Anda akan dikembalikan!")
+            print("Username dan Password yang Anda input ada yang salah, coba lagi!")
             login += 1
 
 def pilih_item():
@@ -171,7 +171,18 @@ def hapus_tiket(tiket):
             break
         else:
             print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
-            continue
+            while True:
+                pilih = input("Apakah anda ingin mengulangnya?(iya/tidak): ")
+                if pilih == "iya" or pilih == "tidak":
+                    break
+                else:
+                    print("Pilihan anda tidak valid!")
+                    continue
+            if pilih == "iya":
+                continue
+            elif pilih == "tidak":
+                pilihan_admin()
+                break
 
 #Admin
 def keluar_admin():
@@ -189,8 +200,6 @@ def keluar_admin():
         elif terus == "tidak":
             pilihan_admin()
             break
-        else:
-            print("Pilihan Anda Tidak Valid!")
 
 #tampil Tiket User
 def tampil_tiket_u(tiket):
@@ -207,33 +216,57 @@ def tampil_tiket_u(tiket):
 
 #User
 def pesan_tiket(tiket):
-    nomor_tiket = input("\nMasukkan nomor tiket yang ingin dipesan: ")
-    if nomor_tiket.upper() in tiket:
-        if tiket[nomor_tiket.upper()]['jumlah'] > 0:
-            jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
-            if jumlah_tiket <= tiket[nomor_tiket.upper()]['jumlah']:
-                tiket[nomor_tiket.upper()]['jumlah'] -= jumlah_tiket
-                nama = input("Masukkan nama Anda: ")
-                data_pemesanan = {
-                    'nomor_tiket': nomor_tiket.upper(),
-                    'jumlah_tiket': jumlah_tiket,
-                    'nama' : nama
-                }
-                pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
-                print("Pemesanan tiket berhasil!")
-                pembayaran(nama, pesanan)
-                return data_pemesanan
+    while True:
+        nomor_tiket = input("\nMasukkan nomor tiket yang ingin dipesan: ")
+        if nomor_tiket.upper() in tiket:
+            if tiket[nomor_tiket.upper()]['jumlah'] > 0:
+                while True:
+                    jumlah_tiket = int(input("Masukkan jumlah tiket yang ingin dipesan: "))
+                    if jumlah_tiket <= tiket[nomor_tiket.upper()]['jumlah']:
+                        tiket[nomor_tiket.upper()]['jumlah'] -= jumlah_tiket
+                        nama = input("Masukkan nama Anda: ")
+                        data_pemesanan = {
+                            'nomor_tiket': nomor_tiket.upper(),
+                            'jumlah_tiket': jumlah_tiket,
+                            'nama' : nama
+                        }
+                        pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
+                        print("Pemesanan tiket berhasil!")
+                        pembayaran(nama, pesanan)
+                        return data_pemesanan
+                    else:
+                        print("Maaf, jumlah tiket yang diminta tidak tersedia.")
+                        while True:
+                            pilih2 = input("Apakah anda ingin memesan dengan jumlah lain?(iya/tidak): ")
+                            if pilih2 == "iya" or pilih2 == "tidak":
+                                break
+                            else:
+                                print("Pilihan anda tidak valid!")
+                                continue
+                        if pilih2 == "tidak":
+                            pilih_item()
+                            break
+                        elif pilih2 == "iya":
+                            continue
             else:
-                print("Maaf, jumlah tiket yang diminta tidak tersedia.")
+                print("Maaf, tiket yang Anda pilih telah habis. Silakan pilih nomor tiket lain.")
                 pilih_item()
         else:
-            print("Maaf, tiket yang Anda pilih telah habis. Silakan pilih nomor tiket lain.")
-            pilih_item()
-    else:
-        print("Nomor tiket tidak valid. Silakan coba lagi.")
-        pilih_item()
+            print("Nomor tiket tidak valid. Silakan coba lagi.")
+            while True:
+                pilih1 = input("Apakah anda ingin memasukkan nomor tiket lagi?(iya/tidak): ")
+                if pilih1 == "iya" or pilih1 == 'tidak':
+                    break
+                else:
+                    print("Pilihan anda tidak valid!")
+                    continue
+            if pilih1 == "iya":
+                continue
+            elif pilih1 == "tidak":
+                pilih_item()
+                break
 
-    return None
+        return None
 
 #User
 def lihat_pesanan_nama(pesanan):
@@ -340,8 +373,6 @@ def keluar():
         elif terus == "tidak":
             pilih_item()
             break
-        else:
-            print("Pilihan Anda Tidak Valid!")
 
 #Data tiket
 tiket = {
