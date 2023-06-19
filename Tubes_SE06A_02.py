@@ -280,7 +280,7 @@ def hapus_pesanan(pesanan, nama, no_tiket):
             break
 
     if not pesanan_ditemukan:
-        print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{nomor_tiket}' tidak ditemukan.")
+        print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
         pilih_item()
 
 #User
