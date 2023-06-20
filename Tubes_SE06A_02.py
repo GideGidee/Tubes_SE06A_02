@@ -250,7 +250,7 @@ def pesan_tiket(tiket):
                             continue
             else:
                 print("Maaf, tiket yang Anda pilih telah habis. Silakan pilih nomor tiket lain.")
-                pilih_item()
+                continue
         else:
             print("Nomor tiket tidak valid. Silakan coba lagi.")
             while True:
@@ -294,7 +294,15 @@ def lihat_pesanan_nama(pesanan):
             break
         else:
             pilihan = input("Pesanan tidak ditemukan. Apakah Anda ingin mencoba lagi? (iya/tidak): ")
-            if pilihan.lower() != 'iya':
+            while True:
+                if pilihan.lower() == 'iya' or pilihan.lower() == 'tidak':
+                    break
+                else:
+                    print("Pilihan anda tidak valid!")
+                    continue
+            if pilihan.lower() == 'iya':
+                continue
+            elif pilihan.lower() == 'tidak':
                 pilih_item()
                 break
 
