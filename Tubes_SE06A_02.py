@@ -63,9 +63,7 @@ def pilih_item():
             lihat_pesanan_nama(pesanan)
             break
         elif pilih == "4":
-            nama = input("Masukkan nama Anda: ")
-            no_tiket = input("Masukkan nomor tiket yang ingin anda hapus: ")
-            hapus_pesanan(pesanan, nama, no_tiket)
+            hapus_pesanan(pesanan)
             break
         elif pilih == "5":
             while True:
@@ -307,18 +305,37 @@ def lihat_pesanan_nama(pesanan):
                 break
 
 #Hapus User
-def hapus_pesanan(pesanan, nama, no_tiket):
+def hapus_pesanan(pesanan):
+    if len(pesanan) == 0:
+        print("\nBelum ada pesanan!")
+        pilih_item()
+    nama = input("Masukkan nama Anda: ")
     pesanan_ditemukan = False
     for i in range(len(pesanan)):
-        if pesanan[i]['nama'].lower() == nama.lower() and pesanan[i]['nomor_tiket'] == no_tiket:
-            pesanan_ditemukan = True
-            nomor_tiket = pesanan[i]['nomor_tiket']
-            jumlah_tiket = pesanan[i]['jumlah_tiket']
-            tiket[nomor_tiket]['jumlah'] += jumlah_tiket
-            pesanan.pop(i)
-            print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' telah dihapus.")
+        if pesanan[i]['nama'].lower() == nama.lower():
+            print(f"List pesanan atas nama {nama}: ")
+            for data in pesanan:
+                nomor_tiket = data['nomor_tiket']
+                jumlah_tiket = data['jumlah_tiket']
+                print(f"Nomor tiket: {nomor_tiket}")
+                print(f"Jumlah: {jumlah_tiket}")
+                print("===========================")
+            no_tiket = input("Masukkan nomor tiket yang ingin anda hapus: ")
+            if pesanan[i]['nomor_tiket'] == no_tiket:
+                pesanan_ditemukan = True
+                nomor_tiket = pesanan[i]['nomor_tiket']
+                jumlah_tiket = pesanan[i]['jumlah_tiket']
+                tiket[nomor_tiket]['jumlah'] += jumlah_tiket
+                pesanan.pop(i)
+                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' telah dihapus.")
+                pilih_item()
+                break
+            if not pesanan_ditemukan:
+                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
+                pilih_item()
+        else:
+            print(f"\nPesanan atas nama {nama} tidak ditemukan!")
             pilih_item()
-            break
 
     if not pesanan_ditemukan:
         print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
