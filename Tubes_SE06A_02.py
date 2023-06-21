@@ -167,6 +167,15 @@ def tambah_tiket():
         else:
             print("Jumlah tiket haruslah berupa angka!")
             continue
+    tiket[nomor_tiket] = {
+        'nama_konser': nama_konser,
+        'lokasi': lokasi,
+        'tanggal': tanggal,
+        'harga': harga,
+        'jumlah': jumlah
+    }
+    print("Tiket berhasil ditambahkan!")
+    tampil_tiket_a(tiket)
 
 #Hapus Tiket admin
 def hapus_tiket(tiket):
