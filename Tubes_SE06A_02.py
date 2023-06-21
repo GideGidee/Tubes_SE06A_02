@@ -141,22 +141,32 @@ def tiket_terjual():
 
 #Tambah Tiket Admin
 def tambah_tiket():
-    nomor_tiket = input("Masukkan nomor tiket: ")
+    while True:
+        nomor_tiket = input("Masukkan nomor tiket: ")
+        if nomor_tiket.upper() in tiket:
+            print("Nomor tiket sudah terpakai!")
+            continue
+        else:
+            break
     nama_konser = input("Masukkan nama konser: ")
     lokasi = input("Masukkan lokasi konser: ")
     tanggal = input("Masukkan tanggal konser: ")
-    harga = int(input("Masukkan harga tiket: "))
-    jumlah = int(input("Masukkan jumlah tiket tersedia: "))
-
-    tiket[nomor_tiket] = {
-        'nama_konser': nama_konser,
-        'lokasi': lokasi,
-        'tanggal': tanggal,
-        'harga': harga,
-        'jumlah': jumlah
-    }
-    print("Tiket berhasil ditambahkan!")
-    tampil_tiket_a(tiket)
+    while True:
+        harga = input("Masukkan harga tiket: ")
+        if harga.isdigit():
+            harga = int(harga)
+            break
+        else:
+            print("Harga tiket haruslah berupa angka!")
+            continue
+    while True:
+        jumlah = input("Masukkan jumlah tiket tersedia: ")
+        if jumlah.isdigit():
+            jumlah = int(jumlah)
+            break
+        else:
+            print("Jumlah tiket haruslah berupa angka!")
+            continue
 
 #Hapus Tiket admin
 def hapus_tiket(tiket):
