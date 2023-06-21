@@ -356,10 +356,6 @@ def hapus_pesanan(pesanan):
             print(f"\nPesanan atas nama {nama} tidak ditemukan!")
             pilih_item()
 
-    if not pesanan_ditemukan:
-        print(f"Pesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
-        pilih_item()
-
 #User
 def pembayaran(nama, pesanan):
     total_harga = 0
