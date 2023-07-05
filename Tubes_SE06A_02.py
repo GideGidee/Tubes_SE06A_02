@@ -195,9 +195,9 @@ def hapus_tiket(tiket):
                 else:
                     print("Pilihan anda tidak valid!")
                     continue
-            if pilih == "iya":
+            if pilih.lower() == "iya":
                 continue
-            elif pilih == "tidak":
+            elif pilih.lower() == "tidak":
                 pilihan_admin()
                 break
 
