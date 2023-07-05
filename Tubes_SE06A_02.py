@@ -167,7 +167,7 @@ def tambah_tiket():
         else:
             print("Jumlah tiket haruslah berupa angka!")
             continue
-    tiket[nomor_tiket] = {
+    tiket[nomor_tiket.upper()] = {
         'nama_konser': nama_konser,
         'lokasi': lokasi,
         'tanggal': tanggal,
@@ -181,13 +181,13 @@ def tambah_tiket():
 def hapus_tiket(tiket):
     while True:
         nomor_tiket = input("Masukkan Nomor Tiket: ")
-        if nomor_tiket in tiket:
+        if nomor_tiket.upper() in tiket:
             del tiket[nomor_tiket]
-            print(f"Tiket dengan Nomor {nomor_tiket} telah dihapus")
+            print(f"Tiket dengan Nomor '{nomor_tiket.upper()}' telah dihapus")
             pilihan_admin()
             break
         else:
-            print(f"Tiket dengan Nomor {nomor_tiket} tidak ditemukan")
+            print(f"Tiket dengan Nomor '{nomor_tiket.upper()}' tidak ditemukan")
             while True:
                 pilih = input("Apakah anda ingin mengulangnya?(iya/tidak): ")
                 if pilih == "iya" or pilih == "tidak":
@@ -245,7 +245,7 @@ def pesan_tiket(tiket):
                         data_pemesanan = {
                             'nomor_tiket': nomor_tiket.upper(),
                             'jumlah_tiket': jumlah_tiket,
-                            'nama' : nama
+                            'nama' : nama.upper()
                         }
                         pesanan.append(data_pemesanan)  # Menambahkan data pesanan ke array pesanan_tiket
                         print("Pemesanan tiket berhasil!")
@@ -340,17 +340,17 @@ def hapus_pesanan(pesanan):
                 print(f"Jumlah: {jumlah_tiket}")
                 print("===========================")
             no_tiket = input("Masukkan nomor tiket yang ingin anda hapus: ")
-            if pesanan[i]['nomor_tiket'] == no_tiket:
+            if pesanan[i]['nomor_tiket'] == no_tiket.upper():
                 pesanan_ditemukan = True
                 nomor_tiket = pesanan[i]['nomor_tiket']
                 jumlah_tiket = pesanan[i]['jumlah_tiket']
                 tiket[nomor_tiket]['jumlah'] += jumlah_tiket
                 pesanan.pop(i)
-                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' telah dihapus.")
+                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket.upper()}' telah dihapus.")
                 pilih_item()
                 break
             if not pesanan_ditemukan:
-                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket}' tidak ditemukan.")
+                print(f"\nPesanan dengan nama '{nama}' dan nomor tiket '{no_tiket.upper()}' tidak ditemukan.")
                 pilih_item()
         else:
             print(f"\nPesanan atas nama {nama} tidak ditemukan!")
